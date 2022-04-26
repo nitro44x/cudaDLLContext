@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "kernels.hpp"
+#include <common/kernels.hpp>
 
 #include <functional>
 #include <memory>
@@ -86,6 +86,9 @@ public:
         kernels::addArray<<<256, 256>>>(rhs.data(), data(), size());
         return *this;
     }
+
+    T const &at(size_t i) const { return m_data[i]; }
+    T &at(size_t i) { return m_data[i]; }
 
     /**
      * @brief Number of bytes used by this array

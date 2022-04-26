@@ -11,10 +11,6 @@ if(CCACHE_PROGRAM)
     set(CMAKE_CUDA_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
 endif()
 
-set(CLI11_SRC
-    thirdparty/CLI11.hpp
-)
-
 add_subdirectory(src)
 
 set(docs README.md)

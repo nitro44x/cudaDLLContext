@@ -35,6 +35,7 @@ std::shared_ptr<Array<double>> combine(std::shared_ptr<Array<double>> aArr,
 }
 } // namespace driverApp
 
+
 int main(int argc, char **argv) {
     CLI::App app{"CUDA GPU shared library demo"};
 

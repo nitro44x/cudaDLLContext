@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.20.0)
 project(cuSharedContext LANGUAGES CXX CUDA)
 
 option(BUILD_DOCS "Build documentation" OFF)
+option(BUILD_TESTS "Build unit tests" ON)
 
 find_program(CCACHE_PROGRAM ccache)
 if(CCACHE_PROGRAM)
@@ -12,6 +13,10 @@ if(CCACHE_PROGRAM)
 endif()
 
 add_subdirectory(src)
+
+if(BUILD_TESTS)
+    add_subdirectory(tests)
+endif()
 
 set(docs README.md)
 
